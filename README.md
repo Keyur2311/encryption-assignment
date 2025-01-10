@@ -81,7 +81,7 @@ npm test
 
 **Tests cover:**
 
-- Adding users
+- Adding users (with encyption and decryption)
 - Fetching users (with and without filters)
 - Deleting users
 - Handling invalid operations
@@ -98,3 +98,16 @@ Copilot provided the logic for retrieving users and applying filters based on ro
 
 **3. Writing Jest Tests:**  
 Copilot assisted in generating Jest test cases to validate API behavior for adding, fetching, and deleting users.
+
+## Encryption and Decryption
+
+To enhance the security of sensitive user data (like name and email), the following encryption and decryption process is implemented:
+
+**Encryption**:
+
+Before saving a user's information (name, email), the data is encrypted using a custom encryption algorithm.
+The encrypted data is then stored in the MySQL database.
+
+**Decryption**:
+
+When retrieving user data, the encrypted fields are decrypted using the corresponding decryption method before being sent in the API response.

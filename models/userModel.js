@@ -9,16 +9,13 @@ const User = sequelize.define('User', {
         primaryKey: true,
     },
     name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(400),
         allowNull: false,
     },
     email: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(400),
         allowNull: false,
         unique: true,
-        validate: {
-            isEmail: true,
-        },
     },
     role: {
         type: DataTypes.ENUM('Admin', 'Editor', 'Viewer'),
