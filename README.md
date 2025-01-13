@@ -103,11 +103,11 @@ Copilot assisted in generating Jest test cases to validate API behavior for addi
 
 To enhance the security of sensitive user data (like name and email), the following encryption and decryption process is implemented:
 
-**Encryption**:
+At first, when user tries to submit data to server, then the user encrypts the data with server's public key, then the server decrypts the data with it's private key and then server again encrypts the data with
+it's public key and then server store data into mySQL. So the encrypted data stored securely in the database.
 
-Before saving a user's information (name, email), the data is encrypted using a custom encryption algorithm.
-The encrypted data is then stored in the MySQL database.
+when any request arrives of fetching the user data then the server first decrypts the data while retrieving the data from the database with it's private key. now server again ecnrypts the data with client's public key while sending the data to user as a response and then client decrypts the data with it's private key to get the original data.
 
-**Decryption**:
+## Other
 
-When retrieving user data, the encrypted fields are decrypted using the corresponding decryption method before being sent in the API response.
+Used Secret manager **Infisical** for storing the secret keys and environment variables
