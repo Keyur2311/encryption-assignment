@@ -23,16 +23,16 @@ Includes Jest tests for ensuring module functionality.
 ### Installation
 
 1. Clone the repository:  
-   [https://github.com/Keyur2311/micro-service-assignment](https://github.com/Keyur2311/micro-service-assignment)
+   [https://github.com/Keyur2311/encryption-assignment](https://github.com/Keyur2311/encryption-assignment)
 2. Navigate to the project directory:
    ```bash
-   cd micro-service-assignment
+   cd encryption-assignment
    ```
 3. Install required dependencies:
    ```bash
    npm install
    ```
-4. Configure the `.env` file with your database credentials:
+4. Configure the `.env` file with your database credentials or use INFISICAL for secret password manager
    ```env
    MYSQL_DB=your_database_name
    MYSQL_USER=your_username
@@ -41,6 +41,10 @@ Includes Jest tests for ensuring module functionality.
    MYSQL_PORT=3306
    PORT=5000
    JWT_SECRET=your_secret
+   SERVER_PRIVATE=your_server_private_key
+   SERVER_PUBLIC=your_server_public_key
+   CLIENT_PRIVATE=your_client_public_key
+   CLIENT_PUBLIC=your_client_private_key
    ```
 5. Create the database in MySQL:
    ```sql
@@ -50,10 +54,12 @@ Includes Jest tests for ensuring module functionality.
    ```bash
    node app.js
    ```
+7. If you're using INFISICAL :
+   ```
+   infisical run node file_name.js
+   ```
 
 ---
-
-## Usage
 
 ### Features
 
@@ -99,7 +105,7 @@ Copilot provided the logic for retrieving users and applying filters based on ro
 **3. Writing Jest Tests:**  
 Copilot assisted in generating Jest test cases to validate API behavior for adding, fetching, and deleting users.
 
-## Encryption and Decryption
+## Encryption and Decryption flow
 
 To enhance the security of sensitive user data (like name and email), the following encryption and decryption process is implemented:
 
